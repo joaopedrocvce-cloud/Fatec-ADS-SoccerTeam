@@ -1,0 +1,44 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "Palmeiras",
+      "trainer": "Abel Ferreira",
+      "stadium": "Allianz Parque",
+      "classification": "1º lugar no Campeonato Brasileiro 2026",
+      "nationality": "Brasileiro"
+    },
+    {
+      "id": 2,
+      "name": "Flamengo",
+      "trainer": "Filipe Luís",
+      "stadium": "Maracanã",
+      "classification": "Líder do Ranking Nacional de Clubes da CBF 2026",
+      "nationality": "Brasileiro"
+    },
+    {
+      "id": 3,
+      "name": "Arsenal FC",
+      "trainer": "Mikel Arteta",
+      "stadium": "Emirates Stadium",
+      "classification": "1º lugar na Premier League 2025/26",
+      "nationality": "Inglês"
+    },
+    {
+      "id": 4,
+      "name": "Real Madrid",
+      "trainer": "Carlo Ancelotti",
+      "stadium": "Santiago Bernabéu",
+      "classification": "Top 10 melhores clubes do mundo em 2026",
+      "nationality": "Espanhol"
+    },
+    {
+      "id": 5,
+      "name": "Bahia",
+      "trainer": "Rogério Ceni",
+      "stadium": "Arena Fonte Nova",
+      "classification": "Destaque na parte superior da tabela do Brasileirão 2026",
+      "nationality": "Brasileiro"
+    }
+  ]
+}

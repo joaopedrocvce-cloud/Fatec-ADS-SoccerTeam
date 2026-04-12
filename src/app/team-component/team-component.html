@@ -1,0 +1,70 @@
+<div class="container">
+
+  <div class="display-4 text-center">Cadastro de Time</div>
+
+  <form [formGroup]="formGroupTeam">
+   <div class="mb-3">
+      <label for="inputName" class="form-label">Nome</label>
+      <input formControlName="name" type="text" class="form-control" id="inputName">
+    </div>
+    
+    <div class="mb-3">
+      <label for="inputTrainer" class="form-label">Trainer</label>
+      <input formControlName="trainer" type="text" class="form-control" id="inputTrainer">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputStadium" class="form-label">Estádio</label>
+      <input formControlName="stadium" type="text" class="form-control" id="inputStadium">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputClassification" class="form-label">Classificação</label>
+      <input formControlName="classification" type="text" class="form-control" id="inputClassification">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputNationality" class="form-label">Nacionalidade</label>
+      <input formControlName="nationality" type="text" class="form-control" id="inputNationality">
+    </div>
+  
+    <button *ngIf="!isEditing" type="submit" class="btn btn-primary" (click)="save()"> Salvar</button>
+    <button *ngIf="isEditing" type="submit" class="btn btn-primary" (click)="update()">Atualizar</button>
+  </form>
+</div>
+
+<div class="display-4 text-center">Times Cadastrados</div>  
+Total de times: {{teams().length}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Treinador</th>
+      <th scope="col">Estádio</th>
+      <th scope="col">Classification</th>
+      <th scope="col">Nationality</th>
+      <th scope="col">Remover</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of teams()">
+      <th scope="row">{{t.id}}</th>
+      <td>{{t.name}}</td>
+      <td>{{t.trainer}}</td>
+      <td>{{t.stadium}}</td>
+      <td>{{t.classification}}</td>
+      <td>{{t.nationality}}</td>
+      <td>
+          <button class="btn btn-danger" (click)="delete(t)">
+            Remover
+          </button>
+      </td>
+      <td>
+      <button class="btn btn-secondary"  (click)="onClickUpdate(t)">
+            Alterar
+      </button>
+  </td>
+    </tr>
+  </tbody>
