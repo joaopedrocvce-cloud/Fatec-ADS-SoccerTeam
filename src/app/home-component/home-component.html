@@ -1,1 +1,49 @@
-<p>home-component works!</p>
+<div class="container-fluid p-5" style="background: linear-gradient(135deg, #28a745, #ffc107); color: white;">
+  <div class="text-center">
+    <h1 class="display-4 fw-bold">Bem-vindo ao Sistema Fatec</h1>
+    <p class="lead">Gerencie seus times e viva o clima da Copa!</p>
+    <button class="btn btn-light btn-lg mt-3 text-success fw-bold" routerLink="/teams">
+      <i class="bi bi-plus-circle"></i> Cadastrar Novo Time
+    </button>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0" style="background-color: #17a2b8; color: white;">
+        <div class="card-body">
+          <i class="bi bi-people display-4"></i>
+          <h5 class="card-title mt-3">Gerencie Times</h5>
+          <p class="card-text">Cadastre novos times e mantenha tudo organizado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0" style="background-color: #28a745; color: white;">
+        <div class="card-body">
+          <i class="bi bi-pencil-square display-4"></i>
+          <h5 class="card-title mt-3">Edite Informações</h5>
+          <p class="card-text">Atualize dados de treinador, estádio e classificação.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0" style="background-color: #ffc107; color: black;">
+        <div class="card-body">
+          <i class="bi bi-bar-chart display-4"></i>
+          <h5 class="card-title mt-3">Acompanhe seus Registros</h5>
+          <p class="card-text">Mantenha o controle dos seus times.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="alert alert-danger shadow-sm text-center" role="alert">
+    <i class="bi bi-lightbulb"></i> Dica: Clique em "Cadastrar Novo Time" para começar!
+  </div>
+</div>

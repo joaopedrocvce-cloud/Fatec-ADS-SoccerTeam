@@ -1,70 +1,92 @@
-<div class="container">
-
-  <div class="display-4 text-center">Cadastro de Time</div>
-
-  <form [formGroup]="formGroupTeam">
-   <div class="mb-3">
-      <label for="inputName" class="form-label">Nome</label>
-      <input formControlName="name" type="text" class="form-control" id="inputName">
-    </div>
-    
-    <div class="mb-3">
-      <label for="inputTrainer" class="form-label">Trainer</label>
-      <input formControlName="trainer" type="text" class="form-control" id="inputTrainer">
-    </div>
-
-    <div class="mb-3">
-      <label for="inputStadium" class="form-label">Estádio</label>
-      <input formControlName="stadium" type="text" class="form-control" id="inputStadium">
-    </div>
-
-    <div class="mb-3">
-      <label for="inputClassification" class="form-label">Classificação</label>
-      <input formControlName="classification" type="text" class="form-control" id="inputClassification">
-    </div>
-
-    <div class="mb-3">
-      <label for="inputNationality" class="form-label">Nacionalidade</label>
-      <input formControlName="nationality" type="text" class="form-control" id="inputNationality">
-    </div>
-  
-    <button *ngIf="!isEditing" type="submit" class="btn btn-primary" (click)="save()"> Salvar</button>
-    <button *ngIf="isEditing" type="submit" class="btn btn-primary" (click)="update()">Atualizar</button>
-  </form>
+<div class="container-fluid p-5" style="background: linear-gradient(135deg, #007bff, #28a745); color: white;">
+  <div class="text-center">
+    <h1 class="display-4 fw-bold">Cadastro de Times</h1>
+    <p class="lead">Monte sua seleção e entre no clima da Copa!</p>
+  </div>
 </div>
 
-<div class="display-4 text-center">Times Cadastrados</div>  
-Total de times: {{teams().length}}
+<div class="container mt-5">
+  <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
+    <div class="card-body">
+      <form [formGroup]="formGroupTeam">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="inputName" class="form-label fw-bold">Nome</label>
+            <input formControlName="name" type="text" class="form-control" id="inputName">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="inputTrainer" class="form-label fw-bold">Treinador</label>
+            <input formControlName="trainer" type="text" class="form-control" id="inputTrainer">
+          </div>
+        </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Treinador</th>
-      <th scope="col">Estádio</th>
-      <th scope="col">Classification</th>
-      <th scope="col">Nationality</th>
-      <th scope="col">Remover</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let t of teams()">
-      <th scope="row">{{t.id}}</th>
-      <td>{{t.name}}</td>
-      <td>{{t.trainer}}</td>
-      <td>{{t.stadium}}</td>
-      <td>{{t.classification}}</td>
-      <td>{{t.nationality}}</td>
-      <td>
-          <button class="btn btn-danger" (click)="delete(t)">
-            Remover
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="inputStadium" class="form-label fw-bold">Estádio</label>
+            <input formControlName="stadium" type="text" class="form-control" id="inputStadium">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="inputClassification" class="form-label fw-bold">Classificação</label>
+            <input formControlName="classification" type="text" class="form-control" id="inputClassification">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputNationality" class="form-label fw-bold">Nacionalidade</label>
+          <input formControlName="nationality" type="text" class="form-control" id="inputNationality">
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button *ngIf="!isEditing" type="submit" class="btn btn-success btn-lg me-2" (click)="save()">
+            <i class="bi bi-check-circle"></i> Salvar
           </button>
-      </td>
-      <td>
-      <button class="btn btn-secondary"  (click)="onClickUpdate(t)">
-            Alterar
-      </button>
-  </td>
-    </tr>
-  </tbody>
+          <button *ngIf="isEditing" type="submit" class="btn btn-warning btn-lg me-2" (click)="update()">
+            <i class="bi bi-pencil-square"></i> Atualizar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Times Cadastrados</h4>
+    </div>
+    <div class="card-body">
+      <p>Total de times: <strong>{{teams().length}}</strong></p>
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Treinador</th>
+            <th>Estádio</th>
+            <th>Classificação</th>
+            <th>Nacionalidade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of teams()">
+            <td>{{t.id}}</td>
+            <td>{{t.name}}</td>
+            <td>{{t.trainer}}</td>
+            <td>{{t.stadium}}</td>
+            <td>{{t.classification}}</td>
+            <td>{{t.nationality}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm me-2" (click)="delete(t)">
+                <i class="bi bi-trash"></i> Remover
+              </button>
+              <button class="btn btn-info btn-sm" (click)="onClickUpdate(t)">
+                <i class="bi bi-pencil"></i> Alterar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

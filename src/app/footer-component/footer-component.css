@@ -1,7 +1,20 @@
 .footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background: linear-gradient(135deg, #343a40, #212529); /* gradiente escuro */
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+.footer-text {
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.footer-text:hover {
+  color: #ffc107;
+  text-shadow: 0 0 8px #ffc107;
 }

@@ -1,0 +1,16 @@
+/* Ícones padrão */
+.nav-icon {
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Ícone ativo com brilho */
+.active-link .nav-icon {
+  color: #ffc107;
+  text-shadow: 0 0 10px #ffc107;
+}
+
+/* Link ativo em negrito */
+.active-link {
+  font-weight: bold;
+}

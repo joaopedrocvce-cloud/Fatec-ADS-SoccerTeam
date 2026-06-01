@@ -7,7 +7,7 @@ import { Team } from './team';
   providedIn: 'root'
 })
 export class TeamService {
-  apiUrl = "http://localhost:3000/teams";
+  apiUrl = "http://localhost:8080/teams";
   
   constructor(private http: HttpClient) { }
 

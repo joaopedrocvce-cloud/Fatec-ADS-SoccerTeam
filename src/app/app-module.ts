@@ -11,6 +11,7 @@ import { FooterComponent } from './footer-component/footer-component';
 import { NavBarComponent } from './nav-bar-component/nav-bar-component';
 import { provideHttpClient } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [App, TeamComponent, HomeComponent, FooterComponent, NavBarComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule],
