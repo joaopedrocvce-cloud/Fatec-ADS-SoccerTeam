@@ -1,6 +1,6 @@
 <div class="container-fluid p-5" style="background: linear-gradient(135deg, #007bff, #28a745); color: white;">
   <div class="text-center">
-    <h1 class="display-4 fw-bold">Cadastro de Times</h1>
+    <h1 class="display-4 fw-bold">Cadastro de Seleções</h1>
     <p class="lead">Monte sua seleção e entre no clima da Copa!</p>
   </div>
 </div>
@@ -11,8 +11,8 @@
       <form [formGroup]="formGroupTeam">
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="inputName" class="form-label fw-bold">Nome</label>
-            <input formControlName="name" type="text" class="form-control" id="inputName">
+            <label for="inputTeam" class="form-label fw-bold">Seleção</label>
+            <input formControlName="team" type="text" class="form-control" id="inputTeam">
           </div>
           <div class="col-md-6 mb-3">
             <label for="inputTrainer" class="form-label fw-bold">Treinador</label>
@@ -22,18 +22,18 @@
 
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="inputStadium" class="form-label fw-bold">Estádio</label>
-            <input formControlName="stadium" type="text" class="form-control" id="inputStadium">
+            <label for="inputCapt" class="form-label fw-bold">Captão</label>
+            <input formControlName="capt" type="text" class="form-control" id="inputCapt">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="inputClassification" class="form-label fw-bold">Classificação</label>
-            <input formControlName="classification" type="text" class="form-control" id="inputClassification">
+            <label for="inputGoal" class="form-label fw-bold">Goleiro</label>
+            <input formControlName="goal" type="text" class="form-control" id="inputGoal">
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="inputNationality" class="form-label fw-bold">Nacionalidade</label>
-          <input formControlName="nationality" type="text" class="form-control" id="inputNationality">
+          <label for="inputBracket" class="form-label fw-bold">Grupo</label>
+          <input formControlName="bracket" type="text" class="form-control" id="inputBracket">
         </div>
 
         <div class="d-flex justify-content-end">
@@ -52,30 +52,30 @@
 <div class="container mt-5">
   <div class="card shadow-sm border-0">
     <div class="card-header bg-primary text-white">
-      <h4 class="mb-0">Times Cadastrados</h4>
+      <h4 class="mb-0">Seleções Cadastradas</h4>
     </div>
     <div class="card-body">
-      <p>Total de times: <strong>{{teams().length}}</strong></p>
+      <p>Total de Seleções: <strong>{{teams().length}}</strong></p>
       <table class="table table-striped table-hover">
         <thead class="table-dark">
           <tr>
             <th>#</th>
-            <th>Nome</th>
+            <th>Seleção</th>
             <th>Treinador</th>
-            <th>Estádio</th>
-            <th>Classificação</th>
-            <th>Nacionalidade</th>
+            <th>Captão</th>
+            <th>Goleiro</th>
+            <th>Grupo</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let t of teams()">
             <td>{{t.id}}</td>
-            <td>{{t.name}}</td>
+            <td>{{t.team}}</td>
             <td>{{t.trainer}}</td>
-            <td>{{t.stadium}}</td>
-            <td>{{t.classification}}</td>
-            <td>{{t.nationality}}</td>
+            <td>{{t.captain}}</td>
+            <td>{{t.goalkeeper}}</td>
+            <td>{{t.bracket}}</td>
             <td>
               <button class="btn btn-danger btn-sm me-2" (click)="delete(t)">
                 <i class="bi bi-trash"></i> Remover

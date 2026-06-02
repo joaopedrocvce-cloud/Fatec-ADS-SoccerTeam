@@ -1,8 +1,8 @@
 export interface Team {
     id: number,
-    name: string,
+    team: string,
     trainer: string,
-    stadium: string,
-    classification: string,
-    nationality: string,
+    captain: string,
+    goalkeeper: string,
+    bracket: string,
 }

@@ -21,11 +21,11 @@ export class TeamComponent implements OnInit{
 
     this.formGroupTeam = formBuilder.group({
       id: [''],
-      name: [''],
+      team: [''],
       trainer: [''],
-      stadium: [''],
-      classification: [''],
-      nationality: ['']
+      captain: [''],
+      goalkeeper: [''],
+      bracket: ['']
     });
 
   }
