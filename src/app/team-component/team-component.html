@@ -8,6 +8,10 @@
   </div>
 </div>
 
+<div *ngIf="feedbackMessage" class="alert alert-{{feedbackType}} text-center mt-3" role="alert">
+  {{feedbackMessage}}
+</div>
+
 <div class="container mt-5">
   <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
     <div class="card-body">
@@ -25,12 +29,12 @@
 
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="inputCapt" class="form-label fw-bold">Capitão</label>
-            <input formControlName="capt" type="text" class="form-control" id="inputCapt">
+            <label for="inputCaptain" class="form-label fw-bold">Capitão</label>
+            <input formControlName="captain" type="text" class="form-control" id="inputCaptain">
           </div>
           <div class="col-md-6 mb-3">
-            <label for="inputGoal" class="form-label fw-bold">Goleiro</label>
-            <input formControlName="goal" type="text" class="form-control" id="inputGoal">
+            <label for="inputGoalkeeper" class="form-label fw-bold">Goleiro</label>
+            <input formControlName="goalkeeper" type="text" class="form-control" id="inputGoalkeeper">
           </div>
         </div>
 
