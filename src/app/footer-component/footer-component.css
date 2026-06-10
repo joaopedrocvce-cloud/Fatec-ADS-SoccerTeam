@@ -1,16 +1,10 @@
 .footer {
   background: linear-gradient(135deg, #343a40, #212529); /* gradiente escuro */
   padding: 15px 0;
-  position: static;
+  position: fixed;
   bottom: 0;
   width: 100%;
   box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
-  opacity: 0; /* invisível por padrão */
-  transition: opacity 0.4s ease;
-}
-
-.footer.visible {
-  opacity: 1; /* aparece quando chega ao fim */
 }
 
 .footer-text {

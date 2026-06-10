@@ -19,12 +19,12 @@ export class TeamService {
     return this.http.post<Team>(this.apiUrl, team);
   }
 
-  // HTTP DELETE: http://localhost:8080/teams/34
+  // HTTP DELETE: http://localhost:3000/teams/6
   delete(team: Team): Observable<void>{
     return this.http.delete<void>(`${this.apiUrl}/${team.id}`);
  }
 
-  // HTTP PUT: http://localhost:8080/teams/34
+  // HTTP PUT: http://localhost:3000/teams/3
   // HTTP Request body: team
   update(team: Team): Observable<Team>{
     return this.http.put<Team>(`${this.apiUrl}/${team.id}`, team);
