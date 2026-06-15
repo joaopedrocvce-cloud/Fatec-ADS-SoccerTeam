@@ -73,8 +73,10 @@ export class TeamComponent implements OnInit{
 
   update() {
     this.service.update(this.formGroupTeam.value).subscribe({
-      next: json => {
-        this.teams.update(teams => teams.map(t => t.id === json.id ? json : t));
+      next: () => {
+        this.service.getAllTeams().subscribe({
+          next: json => this.teams.set(json)
+        });
         this.formGroupTeam.reset();
         this.isEditing = false;
         this.feedbackMessage = 'Seleção atualizada com sucesso!';
@@ -86,6 +88,7 @@ export class TeamComponent implements OnInit{
       }
     });
   }
+
 
   onClickUpdate(team: Team) {
     this.formGroupTeam.patchValue(team);
